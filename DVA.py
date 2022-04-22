@@ -49,30 +49,30 @@ st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_h
     # images_on_page2= [im1,im2,im3,im5,im6] 
     # st.image(images_on_page2, width = 150,caption = [a[0],a[1],a[2],a[4],a[5]])
 
-with c2:
-    data = pd.read_csv("movie_data_with_nn_poster.csv")
-    titles_with_nn = data.loc[:,["Title","5 Nearest","Poster_nn"]]
-    option = st.selectbox('Movie title',tuple(list(titles_with_nn['Title'])))
-    id = data.index[data['Title'] == option].tolist()[0]
-    Movies = titles_with_nn.loc[id].at["5 Nearest"]  
-    movie_names = Movies.split(",") 
-    poster_links = titles_with_nn.loc[id].at["Poster_nn"]
-    poster_links = poster_links.replace("[","")
-    poster_links = poster_links.replace("]","")
-    poster_links = poster_links.replace("'","")
-    poster_names =poster_links.split(",") 
-    urllib.request.urlretrieve(poster_names[0],'ima1.png')
-    ima1 = Image.open("ima1.png")
-    urllib.request.urlretrieve(poster_names[1],'ima2.png')
-    ima2 = Image.open("ima2.png")
-    urllib.request.urlretrieve(poster_names[2],'ima3.png')
-    ima3 = Image.open("ima3.png")
-    urllib.request.urlretrieve(poster_names[3],'ima4.png')
-    ima4 = Image.open("ima4.png")
-    urllib.request.urlretrieve(poster_names[4],'ima5.png')
-    ima5 = Image.open("ima5.png")
-    images_on_page3= [ima1,ima2,ima3,ima4,ima5] 
-    st.image(images_on_page3, width = 150,caption = movie_names)
+# with c2:
+#     data = pd.read_csv("movie_data_with_nn_poster.csv")
+#     titles_with_nn = data.loc[:,["Title","5 Nearest","Poster_nn"]]
+#     option = st.selectbox('Movie title',tuple(list(titles_with_nn['Title'])))
+#     id = data.index[data['Title'] == option].tolist()[0]
+#     Movies = titles_with_nn.loc[id].at["5 Nearest"]  
+#     movie_names = Movies.split(",") 
+#     poster_links = titles_with_nn.loc[id].at["Poster_nn"]
+#     poster_links = poster_links.replace("[","")
+#     poster_links = poster_links.replace("]","")
+#     poster_links = poster_links.replace("'","")
+#     poster_names =poster_links.split(",") 
+#     urllib.request.urlretrieve(poster_names[0],'ima1.png')
+#     ima1 = Image.open("ima1.png")
+#     urllib.request.urlretrieve(poster_names[1],'ima2.png')
+#     ima2 = Image.open("ima2.png")
+#     urllib.request.urlretrieve(poster_names[2],'ima3.png')
+#     ima3 = Image.open("ima3.png")
+#     urllib.request.urlretrieve(poster_names[3],'ima4.png')
+#     ima4 = Image.open("ima4.png")
+#     urllib.request.urlretrieve(poster_names[4],'ima5.png')
+#     ima5 = Image.open("ima5.png")
+#     images_on_page3= [ima1,ima2,ima3,ima4,ima5] 
+#     st.image(images_on_page3, width = 150,caption = movie_names)
 
 
 year = st.slider('Show me the trends of the year', 1940, 2020,step=20)
