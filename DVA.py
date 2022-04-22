@@ -26,7 +26,7 @@ st.write('<style>div.row-widget.stRadio > div{flex-direction:row; justify-conten
 st.write('<style>div.st-bf{flex-direction:column;} div.st-ag{font-size:1rem; padding-left:2px; padding-right:10px;}</style>', unsafe_allow_html=True)
 st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_html=True)
 
-with c1:
+# with c1:
     
     # test = searchquery.search_query("LDAModel.model","lda_dict","lda_corpus","movie_data_nn.csv","NN_lda.csv")
     # test.load_info()
