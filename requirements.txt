@@ -1,0 +1,9 @@
+numpy
+pillow
+requests
+pandas
+matplotlib
+gensim
+nltk
+time
+pickle
