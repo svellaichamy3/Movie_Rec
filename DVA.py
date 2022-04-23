@@ -31,6 +31,8 @@ st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_h
 
 @st.cache
 def lda(title2):
+    nltk.download('stopwords')
+    nltk.download('wordnet')
     test = searchquery.search_query("LDAModel.model","lda_dict","lda_corpus","movie_data_nn.csv","NN_lda.csv")
     test.load_info()
     a,b = test.search(title2)
