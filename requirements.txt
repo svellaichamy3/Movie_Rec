@@ -5,5 +5,4 @@ pandas
 matplotlib
 gensim
 nltk
-time
-pickle
+
