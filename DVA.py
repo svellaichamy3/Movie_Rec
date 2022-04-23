@@ -18,8 +18,7 @@ import time
 import pickle
 import string
 from gensim.models import CoherenceModel
-# nltk.download('stopwords')
-# nltk.download('wordnet')
+
 st.set_page_config(page_title="Movie Recommendation", layout="wide")
 st. markdown("<h2 style='text-align: center; color: black;'>Movie Recommendation</h2>", unsafe_allow_html=True)
 c1, c2 = st.columns([2,2])
@@ -33,6 +32,8 @@ st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_h
 
 @st.cache
 def lda(title2):
+    nltk.download('stopwords')
+    nltk.download('wordnet')
 
     test = searchquery.search_query("LDAModel.model","lda_dict","lda_corpus","movie_data_nn.csv","NN_lda.csv")
     test.load_info()
