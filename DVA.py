@@ -12,6 +12,7 @@ from gensim import corpora,models, similarities
 import nltk
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords, wordnet
 import time
