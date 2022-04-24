@@ -46,24 +46,72 @@ def dataread():
     return data
 
 with c1:
+#     st.write('Enter keywords related to plot')
+#     title2 = st.text_input('Plot', 'College Romance')
+#     st.write('Movies whose plots are similar to ',title2,':')
+#     a,b = lda(title2)    
+#     urllib.request.urlretrieve(b[0],'im1.png')
+#     im1 = Image.open("im1.png")
+#     urllib.request.urlretrieve(b[1],'im2.png')
+#     im2 = Image.open("im2.png")
+#     urllib.request.urlretrieve(b[2],'im3.png')
+#     im3 = Image.open("im3.png")
+#     urllib.request.urlretrieve(b[3],'im4.png')
+#     im4 = Image.open("im4.png")
+#     urllib.request.urlretrieve(b[4],'im5.png')
+#     im5 = Image.open("im5.png")
+#     urllib.request.urlretrieve(b[5],'im6.png')
+#     im6 = Image.open("im6.png")
+#     images_on_page2= [im1,im2,im3,im4,im5,im6] 
+#     st.image(images_on_page2, width = 150,caption = [a[0],a[1],a[2],a[3],a[4],a[5]])
     st.write('Enter keywords related to plot')
-    title2 = st.text_input('Plot', 'College Romance')
+    title2 = st.text_input('Plot', 'Romantic Love')
     st.write('Movies whose plots are similar to ',title2,':')
-    a,b = lda(title2)    
-    urllib.request.urlretrieve(b[0],'im1.png')
-    im1 = Image.open("im1.png")
-    urllib.request.urlretrieve(b[1],'im2.png')
-    im2 = Image.open("im2.png")
-    urllib.request.urlretrieve(b[2],'im3.png')
-    im3 = Image.open("im3.png")
-    urllib.request.urlretrieve(b[3],'im4.png')
-    im4 = Image.open("im4.png")
-    urllib.request.urlretrieve(b[4],'im5.png')
-    im5 = Image.open("im5.png")
-    urllib.request.urlretrieve(b[5],'im6.png')
-    im6 = Image.open("im6.png")
-    images_on_page2= [im1,im2,im3,im4,im5,im6] 
-    st.image(images_on_page2, width = 150,caption = [a[0],a[1],a[2],a[3],a[4],a[5]])
+    a,b = lda(title2)  
+    caption_list = []
+    images_on_page2=[]
+    try:
+        urllib.request.urlretrieve(b[0],'im1.png')
+        im1 = Image.open("im1.png")
+        images_on_page2.append(im1)
+        caption_list.append(a[0])
+    except  (urllib.error.URLError, urllib.error.HTTPError):
+        pass
+
+    try:
+        urllib.request.urlretrieve(b[1],'im2.png')
+        im2 = Image.open("im2.png")
+        images_on_page2.append(im2)
+        caption_list.append(a[1])
+    except  (urllib.error.URLError, urllib.error.HTTPError):
+        pass
+
+    try:
+        urllib.request.urlretrieve(b[2],'im3.png')
+        im3 = Image.open("im3.png")
+        images_on_page2.append(im3)
+        caption_list.append(a[2])
+    except  (urllib.error.URLError, urllib.error.HTTPError):
+        pass
+
+    try:
+        urllib.request.urlretrieve(b[3],'im4.png')
+        im4 = Image.open("im4.png")
+        images_on_page2.append(im4)
+        caption_list.append(a[3])
+    except  (urllib.error.URLError, urllib.error.HTTPError):
+        pass
+ 
+    try:
+        urllib.request.urlretrieve(b[4],'im5.png')
+        im5 = Image.open("im5.png")
+        images_on_page2.append(im5)
+        caption_list.append(a[4])
+    except  (urllib.error.URLError, urllib.error.HTTPError):
+        pass
+    
+
+    st.image(images_on_page2, width = 150,caption = caption_list)
 
 with c2:
     st.write('Enter Movie Title')
