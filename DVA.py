@@ -47,7 +47,7 @@ def dataread():
 
 with c1:
     st.write('Enter keywords related to plot')
-    title2 = st.text_input('Plot', 'Romantic Love')
+    title2 = st.text_input('Plot', 'College Romance')
     st.write('Movies whose plots are similar to ',title2,':')
     a,b = lda(title2)    
     urllib.request.urlretrieve(b[0],'im1.png')
@@ -56,14 +56,14 @@ with c1:
     im2 = Image.open("im2.png")
     urllib.request.urlretrieve(b[2],'im3.png')
     im3 = Image.open("im3.png")
-    # urllib.request.urlretrieve(b[3],'im4.png')
-    # im4 = Image.open("im4.png")
+    urllib.request.urlretrieve(b[3],'im4.png')
+    im4 = Image.open("im4.png")
     urllib.request.urlretrieve(b[4],'im5.png')
     im5 = Image.open("im5.png")
     urllib.request.urlretrieve(b[5],'im6.png')
     im6 = Image.open("im6.png")
-    images_on_page2= [im1,im2,im3,im5,im6] 
-    st.image(images_on_page2, width = 150,caption = [a[0],a[1],a[2],a[4],a[5]])
+    images_on_page2= [im1,im2,im3,im4,im5,im6] 
+    st.image(images_on_page2, width = 150,caption = [a[0],a[1],a[2],a[3],a[4],a[5]])
 
 with c2:
     st.write('Enter Movie Title')
