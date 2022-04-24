@@ -25,7 +25,7 @@ st. markdown("<h2 style='text-align: center; color: black;'>Movie Recommendation
 c1, c2 = st.columns([2,2])
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row; justify-content: flex-start;} </style>', unsafe_allow_html=True)
 # st.write('<style>div.st-bf{flex-direction:column;} div.st-ag{font-size:1rem; padding-left:2px; padding-right:10px;}</style>', unsafe_allow_html=True)
-st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_html=True)
+st.write('<style>div.block-container{padding-top:6rem;}</style>', unsafe_allow_html=True)
 
 
 
